@@ -1,0 +1,131 @@
+INFO:__main__:Starting pipeline in train mode
+INFO:__main__:Initializing model training...
+INFO:src.preprocess:Starting data preprocessing...
+INFO:src.preprocess:Data loaded successfully
+INFO:src.preprocess:
+=== Raw Training Data Info ===
+INFO:src.preprocess:Shape: (125973, 42)
+INFO:src.preprocess:
+Data Types:
+INFO:src.preprocess:duration                       object
+protocol_type                  object
+service                        object
+flag                           object
+src_bytes                      object
+dst_bytes                      object
+land                           object
+wrong_fragment                 object
+urgent                         object
+hot                            object
+num_failed_logins              object
+logged_in                      object
+num_compromised                object
+root_shell                     object
+su_attempted                   object
+num_root                       object
+num_file_creations             object
+num_shells                     object
+num_access_files               object
+num_outbound_cmds              object
+is_host_login                  object
+is_guest_login                 object
+count                          object
+srv_count                      object
+serror_rate                    object
+srv_serror_rate                object
+rerror_rate                    object
+srv_rerror_rate                object
+same_srv_rate                  object
+diff_srv_rate                  object
+srv_diff_host_rate             object
+dst_host_count                 object
+dst_host_srv_count             object
+dst_host_same_srv_rate         object
+dst_host_diff_srv_rate         object
+dst_host_same_src_port_rate    object
+dst_host_srv_diff_host_rate    object
+dst_host_serror_rate           object
+dst_host_srv_serror_rate       object
+dst_host_rerror_rate           object
+dst_host_srv_rerror_rate       object
+label                          object
+dtype: object
+INFO:src.preprocess:
+=== Raw Test Data Info ===
+INFO:src.preprocess:Shape: (22544, 42)
+INFO:src.preprocess:
+Data Types:
+INFO:src.preprocess:duration                       object
+protocol_type                  object
+service                        object
+flag                           object
+src_bytes                      object
+dst_bytes                      object
+land                           object
+wrong_fragment                 object
+urgent                         object
+hot                            object
+num_failed_logins              object
+logged_in                      object
+num_compromised                object
+root_shell                     object
+su_attempted                   object
+num_root                       object
+num_file_creations             object
+num_shells                     object
+num_access_files               object
+num_outbound_cmds              object
+is_host_login                  object
+is_guest_login                 object
+count                          object
+srv_count                      object
+serror_rate                    object
+srv_serror_rate                object
+rerror_rate                    object
+srv_rerror_rate                object
+same_srv_rate                  object
+diff_srv_rate                  object
+srv_diff_host_rate             object
+dst_host_count                 object
+dst_host_srv_count             object
+dst_host_same_srv_rate         object
+dst_host_diff_srv_rate         object
+dst_host_same_src_port_rate    object
+dst_host_srv_diff_host_rate    object
+dst_host_serror_rate           object
+dst_host_srv_serror_rate       object
+dst_host_rerror_rate           object
+dst_host_srv_rerror_rate       object
+label                          object
+dtype: object
+INFO:src.preprocess:
+Label distribution - Train: label
+1    125973
+Name: count, dtype: int64
+INFO:src.preprocess:Label distribution - Test: label
+1    22544
+Name: count, dtype: int64
+INFO:src.preprocess:
+Encoding 7 categorical columns...
+INFO:src.preprocess:Encoded land with 3 categories
+INFO:src.preprocess:Encoded logged_in with 96 categories
+INFO:src.preprocess:Encoded service with 11 categories
+INFO:src.preprocess:Encoded is_guest_login with 512 categories
+INFO:src.preprocess:Encoded flag with 3601 categories
+INFO:src.preprocess:Encoded protocol_type with 70 categories
+INFO:src.preprocess:Encoded is_host_login with 2 categories
+INFO:src.preprocess:Saved preprocessing artifacts
+INFO:src.preprocess:
+=== Preprocessing Complete ===
+INFO:src.preprocess:Final training shape: (125973, 40)
+INFO:src.preprocess:Final test shape: (22544, 40)
+ERROR:src.data_loader:Error saving processed data: Train features/labels mismatch
+CRITICAL:__main__:Pipeline failed: Train features/labels mismatch
+Traceback (most recent call last):
+  File "E:\project\new_project\project_implementationv2\main.py", line 28, in main
+    train_model()
+  File "E:\project\new_project\project_implementationv2\src\train.py", line 33, in train_model
+    save_processed_data(X_train, X_test, y_train, y_test)
+  File "E:\project\new_project\project_implementationv2\src\data_loader.py", line 83, in save_processed_data
+    assert X_train.shape[0] == y_train.shape[0], "Train features/labels mismatch"
+AssertionError: Train features/labels mismatch
